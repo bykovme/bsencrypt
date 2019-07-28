@@ -139,25 +139,6 @@ func (cipher256 *cipherAES256) Decrypt(cryptedText string) (string, error) {
 		return "", err
 	}
 
-	/*
-		block, err := aes.NewCipher(cipher256.generatedKey)
-
-		if err != nil {
-			return "", err
-		}
-
-		if len(ciphertext) < aes.BlockSize {
-			return "", errors.New("Cipher text is too short for AES")
-		}
-
-		iv := ciphertext[:aes.BlockSize]
-		ciphertext = ciphertext[aes.BlockSize:]
-
-		stream := cipher.NewCFBDecrypter(block, iv)
-		stream.XORKeyStream(ciphertext, ciphertext)
-
-		return fmt.Sprintf("%s", ciphertext), nil
-	*/
 	return decryptedText, nil
 }
 
